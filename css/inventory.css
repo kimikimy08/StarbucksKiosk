@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* Main Palette */
+  --mainGreen: #0b421a;
+  --mainWhite: #fffcfc;
+  --mainLightOrange: #eac784;
+  --mainLightBrown: #604c4c;
+  --mainDarkBrown: #362415;
+
+  --hoverColor: #06270f;
+  --backgroundColor: #f1f8fc;
+
+  /* Text */
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+
+  --bright_orange: #e6873c;
+
+  /* Shadow */
+  --box-shadow: rgba(0, 0, 0, .1);
+
+  /* Scrollbar */
+  --scroll-hover: #808080;
+  --scroll-bar-color: white;
+  --scroll-thumb-color: #a6a6a6;
+}
+
+/* scrollbar  */
+::-webkit-scrollbar {
+  width: .50rem;
+  background-color: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-hover);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+
+body {
+  min-height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: var(--backgroundColor);
+}
+
+.container {
+  max-width: 600px;
+  height: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px var(--box-shadow);
+}
+
+.container .title {
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 180px;
+  border-radius: 5px;
+  background: linear-gradient(150deg, var(--mainGreen), var(--mainLightOrange));
+}
+
+.content form .product-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .product-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 1 - 20px);
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.product-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.product-details .input-box textarea{
+  height: 100px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-top: 5px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+
+.product-details .input-box input:focus,
+.product-details .input-box input:valid, 
+.product-details .input-box textarea:focus,
+.product-details .input-box textarea:valid {
+  border-color: #9b59b6;
+}
+
+form .type-details .type-title {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: var(--mainGreen);
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 20px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--mainGreen);
+  width: calc(100% / 3 - 10px);
+}
+
+form .button input:hover {
+  /* transform: scale(0.99); */
+  background: var(--hoverColor);
+}
+
+form button {
+  height: 45px;
+  margin: 20px 0;
+}
+
+form button  {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--mainGreen);
+  width: calc(100% / 3 - 10px);
+}
+
+form button:hover {
+  /* transform: scale(0.99); */
+  background: var(--hoverColor);
+}
+
+.upload {
+  /* height: 100vh;
+  width: 100%; */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  /* margin-top: -200px;
+  margin-bottom: -200px; */
+  /* background-color: var(--mainWhite); */
+}
+
+.card {
+  border-radius: 10px;
+  /* border: 1px solid var(--darkOne); */
+  /* box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3); */
+  width: 90%;
+  height: 250px;
+  background-color: var(--mainWhite);
+  /* padding: 10px 30px 40px; */
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  
+}
+
+.drop_box {
+  margin: 10px 10px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px dotted #a3a3a3;
+  border-radius: 5px;
+}
+
+.drop_box h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+.drop_box p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--mainWhite);
+  color: var(--darkOne);
+  border: 1px solid var(--darkOne);
+  padding: 10px 20px;
+  /* border: none; */
+  outline: none;
+  transition: 0.3s;
+}
+
+.btn:hover{
+  text-decoration: none;
+  background-color: var(--mainWhite);
+  color: var(--mainGreen);
+  padding: 10px 20px;
+  /* border: none; */
+  outline: 1px solid var(--mainGreen);
+  cursor: pointer;
+}
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .product-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .category {
+    width: 100%;
+  }
+
+  .content form .product-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .product-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
